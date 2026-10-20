@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20/10 – Những bông hoa đẹp nhất của lớp 12A11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ================= BIẾN & RESET ================= */
+:root{
+  --pink:#f8c8d8;
+  --pink-deep:#e88aa8;
+  --rose:#d96a8a;
+  --cream:#fff8f3;
+  --lavender:#d9cdf0;
+  --lavender-deep:#9b86c9;
+  --gold:#f5e2a8;
+  --ink:#5b4653;
+  --ink-soft:#8a7480;
+  --shadow:0 12px 35px rgba(217,106,138,.18);
+  --radius:22px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Quicksand',sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  overflow-x:hidden;
+  line-height:1.7;
+}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700;}
+img{max-width:100%;display:block;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+
+/* Các section được cô lập, không đè lên nhau */
+section{
+  position:relative; 
+  padding:80px 20px; 
+  overflow:hidden; 
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100svh; /* Đảm bảo mỗi phần chiếm trọn 1 màn hình */
+}
+
+#petals-canvas{position:fixed;inset:0;pointer-events:none;z-index:5;}
+
+/* ================= NÚT TIẾP TỤC ================= */
+.next-btn-wrap { text-align: center; margin-top: 30px; position: relative; z-index: 10; width: 100%; display: flex; justify-content: center;}
+.btn-next {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 28px; 
+  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  color: var(--rose); border: 1px solid var(--rose); border-radius: 999px;
+  font-weight: 700; font-size: 0.9rem; box-shadow: 0 8px 20px rgba(217, 106, 138, 0.2);
+  transition: all 0.3s ease; 
+  animation: floatBtn 2.5s ease-in-out infinite;
+}
+.btn-next:hover { 
+  background: linear-gradient(120deg, #e88aa8, #b79ce0); 
+  color: #fff; 
+  transform: translateY(-5px) scale(1.05); 
+  box-shadow: 0 15px 35px rgba(217, 106, 138, 0.4); 
+  border-color: transparent;
+}
+@keyframes floatBtn { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+/* ================= MÀN HÌNH CHÀO ================= */
+#welcome{
+  min-height:100svh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:40px 22px;
+  background: radial-gradient(circle at 20% 15%, rgba(217,205,240,.55), transparent 55%),
+              radial-gradient(circle at 85% 80%, rgba(248,200,216,.65), transparent 55%),
+              linear-gradient(160deg,#fff8f3 0%,#fdeef3 50%,#f3ecfb 100%);
+  position: relative; overflow: hidden;
+}
+
+#intro-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+
+.welcome-content {
+  position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.welcome-content.hide { opacity: 0; transform: translateY(-30px); pointer-events: none; }
+
+.welcome-badge{
+  font-size:.85rem; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--rose); font-weight:600; padding:10px 22px; border:1px solid rgba(217,106,138,.35);
+  border-radius:999px; background:rgba(255,255,255,.55); backdrop-filter:blur(6px);
+  animation:fadeUp 1s .1s both;
+}
+.welcome-title{
+  font-size:clamp(2.1rem,6.5vw,4.4rem); margin:26px 0 14px; animation:fadeUp 1s .3s both; line-height:1.15;
+}
+.welcome-sub{
+  max-width:620px; font-size:clamp(.95rem,2.4vw,1.15rem); color:var(--ink-soft); animation:fadeUp 1s .5s both; margin-bottom: 38px;
+}
+.btn-gift{
+  font-size:1.05rem; font-weight:700; color:#fff; padding:17px 40px; border-radius:999px;
+  background:linear-gradient(120deg,#e88aa8,#b79ce0); box-shadow:0 14px 34px rgba(217,106,138,.4);
+  transition:transform .3s, box-shadow .3s, opacity 0.5s; animation:fadeUp 1s .7s both, pulse 2.6s 1.8s infinite;
+}
+.btn-gift:hover{transform:translateY(-4px) scale(1.03); box-shadow:0 20px 44px rgba(217,106,138,.5);}
+.btn-gift.hide { opacity: 0; pointer-events: none; }
+
+@keyframes pulse{ 0%,100%{box-shadow:0 14px 34px rgba(217,106,138,.4);} 50%{box-shadow:0 14px 34px rgba(217,106,138,.4),0 0 0 14px rgba(232,138,168,.15);} }
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:none;}}
+
+.text-wave{
+  background:linear-gradient(90deg,#d96a8a,#9b86c9,#e88aa8,#d96a8a);
+  background-size:300% 100%; -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:transparent; animation:waveGradient 6s linear infinite;
+}
+@keyframes waveGradient{0%{background-position:0% 50%;}100%{background-position:300% 50%;}}
+
+/* ================= OVERLAY BỨC THƯ ================= */
+#gift-overlay{position:fixed; inset:0; z-index:100; display:none; align-items:center; justify-content:center; background:rgba(60,40,55,.55); backdrop-filter:blur(8px); padding:22px; overflow-y:auto;}
+#gift-overlay.show{display:flex; animation:fadeIn .4s;}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.gift-letter{display:none; width:100%; max-width:640px; max-height:88vh; overflow-y:auto; background:var(--cream); border-radius:28px; padding:38px 30px 30px; box-shadow:0 30px 80px rgba(0,0,0,.35); position:relative; animation:letterIn .7s cubic-bezier(.2,1.3,.4,1);}
+#gift-overlay.opened .gift-letter{display:block;}
+@keyframes letterIn{from{opacity:0;transform:translateY(40px) scale(.92);}to{opacity:1;transform:none;}}
+.gift-letter-close{position:absolute; top:14px; right:16px; width:38px; height:38px; border-radius:50%; background:rgba(217,106,138,.12); color:var(--rose); font-size:1.1rem; font-weight:700; display:grid; place-items:center; transition:background .25s, transform .25s;}
+.gift-letter-close:hover{background:rgba(217,106,138,.25); transform:rotate(90deg);}
+.gift-letter-inner{text-align:center;}
+.gift-letter-inner h3{font-size:clamp(1.2rem,3.5vw,1.6rem); color:var(--rose); margin-bottom:18px;}
+.gift-letter-inner p{color:var(--ink-soft); font-size:.95rem; text-align:justify; margin-bottom:12px; line-height: 1.8;}
+.gift-letter-sign{text-align:right!important; font-style:italic; color:var(--rose)!important; font-weight:600; margin-top:16px;}
+.btn-close-gift{margin-top:22px; padding:13px 32px; border-radius:999px; background:linear-gradient(120deg,#e88aa8,#b79ce0); color:#fff; font-weight:700; transition:transform .25s;}
+.btn-close-gift:hover{transform:scale(1.05);}
+
+/* ================= TOPBAR ================= */
+.topbar{position:fixed; top:0; left:0; right:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:10px 20px; background:rgba(255,248,243,.85); backdrop-filter:blur(12px); box-shadow:0 2px 18px rgba(217,106,138,.1); transform:translateY(-100%); transition:transform .4s;}
+.topbar.visible{transform:none;}
+.topbar .brand{font-family:'Playfair Display',serif; font-weight:700; color:var(--rose); font-size:1.05rem;}
+.controls{display:flex; gap:8px; align-items:center;}
+.ctrl-btn{width:38px; height:38px; border-radius:50%; background:#fff; box-shadow:0 4px 14px rgba(217,106,138,.18); display:grid; place-items:center; font-size:1rem; transition:transform .25s, background .25s;}
+.ctrl-btn:hover{transform:scale(1.1); background:var(--pink);}
+.ctrl-btn.off{opacity:.45;}
+.volume-slider {width: 70px; height: 4px; -webkit-appearance: none; background: var(--pink); border-radius: 2px; outline: none; margin-left: 5px; cursor: pointer;}
+.volume-slider::-webkit-slider-thumb {-webkit-appearance: none; width: 12px; height: 12px; border-radius: 50%; background: var(--rose); cursor: pointer;}
+
+/* ================= SECTION CHUNG ================= */
+.section-head{text-align:center; max-width:760px; margin:0 auto 30px;}
+.section-head h2{font-size:clamp(1.5rem,4.5vw,2.2rem); background:linear-gradient(90deg,#d96a8a,#9b86c9,#e88aa8,#d96a8a); background-size:300% 100%; -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; animation:waveGradient 6s linear infinite; display: inline-block;}
+.section-head .ornament{display:block; margin:14px auto 0; width:120px; height:2px; background:linear-gradient(90deg,transparent,var(--rose),transparent);}
+.reveal{opacity:0; transform:translateY(30px); transition:opacity .8s ease, transform .8s ease;}
+.reveal.in{opacity:1; transform:none;}
+
+/* ================= CĂN CHỈNH BỐ CỤC (RÚT NGẮN VÀ THU GỌN) ================= */
+.big-card, .letter-36-wrap, .teacher-card {
+  width: 100%; max-width: 700px; margin: 0 auto; background: rgba(255,255,255,.85); backdrop-filter: blur(10px);
+  border: 1px solid rgba(217,106,138,.18); border-radius: 24px; padding: clamp(20px, 4vw, 35px); box-shadow: var(--shadow);
+  position: relative; overflow: hidden;
+}
+.big-card::before, .letter-36-wrap::before { content:""; position:absolute; top:-70px; right:-70px; width:150px; height:150px; background:radial-gradient(circle,rgba(248,200,216,.6),transparent 70%); border-radius:50%; z-index: 0; }
+.big-card::after, .letter-36-wrap::after { content:""; position:absolute; bottom:-90px; left:-70px; width:180px; height:180px; background:radial-gradient(circle,rgba(217,205,240,.6),transparent 70%); border-radius:50%; z-index: 0; }
+.big-card > *, .letter-36-wrap > * { position: relative; z-index: 1; }
+
+.big-card .lead { font-family:'Playfair Display',serif; font-style:italic; font-size:1.15rem; color:var(--rose); margin-bottom:15px; text-align: center; line-height: 1.5; }
+.letter-36-wrap h3 { text-align: center; color: var(--rose); font-size: 1.3rem; margin-bottom: 15px; font-family:'Playfair Display',serif; }
+.big-card .sign, .letter-36-wrap .sign { margin-top: 15px; text-align: right; font-style: italic; color: var(--rose); font-weight: 600; font-size: 0.9rem; }
+.teacher-card p, .big-card p, .letter-36-wrap p { 
+  color:var(--ink-soft); 
+  margin-bottom: 12px; 
+  font-size: 0.95rem; 
+  text-align: justify; 
+  line-height: 1.7; 
+}
+
+/* ================= 1. THƯ CHUNG ================= */
+#letter{background:linear-gradient(180deg,#fff8f3,#fdeef3);}
+
+/* ================= 2. TRI ÂN CÔ GIÁO ================= */
+#teacher{background:radial-gradient(circle at 80% 20%, rgba(245,226,168,.35), transparent 55%),linear-gradient(180deg,#fff8f3,#fdf3e9);}
+.teacher-wrap{max-width:900px; margin:0 auto; display:flex; flex-direction: column; align-items:center; gap:20px;}
+@media(min-width:820px){.teacher-wrap{flex-direction: row; justify-content: center; align-items: stretch;}}
+.teacher-visual{position:relative; aspect-ratio:1; max-width:240px; width:100%; border-radius:50% 50% 46% 54% / 54% 46% 54% 46%; background:linear-gradient(150deg,#f8c8d8,#d9cdf0); display:flex; align-items:center; justify-content:center; box-shadow:inset 0 0 0 8px rgba(255,255,255,.5), var(--shadow); animation:breathe 7s ease-in-out infinite; overflow:hidden; flex-shrink: 0; margin: 0 auto;}
+.teacher-visual img{width:100%; height:100%; object-fit:cover; object-position: center 20%; border-radius:inherit;}
+.teacher-visual .fallback-emoji{font-size:4.5rem;}
+@keyframes breathe{0%,100%{transform:scale(1);}50%{transform:scale(1.04);}}
+.teacher-card { flex: 1; max-width: 520px; display: flex; flex-direction: column; justify-content: center;}
+.teacher-card h3{color:var(--rose); font-size:1.3rem; margin-bottom:12px; text-align: center;}
+.btn-soft{padding:12px 28px; border-radius:999px; font-weight:700; color:#fff; background:linear-gradient(120deg,#d96a8a,#9b86c9); box-shadow:0 10px 26px rgba(217,106,138,.35); transition:transform .25s, box-shadow .25s; display: block; margin: 10px auto 0; font-size: 0.95rem;}
+.btn-soft:hover{transform:translateY(-3px); box-shadow:0 16px 34px rgba(217,106,138,.45);}
+.teacher-msg{margin-top:15px; padding:15px 18px; border-radius:12px; background:linear-gradient(120deg,#fdeef3,#f3ecfb); border-left:4px solid var(--rose); color:var(--ink); font-style:italic; display:none; text-align: justify; line-height: 1.7; font-size: 0.9rem;}
+.teacher-msg.show{display:block; animation:fadeUp .6s;}
+
+/* ================= 3. GỬI CÁC CÔ GÁI 12A11 ================= */
+#wishes{background:linear-gradient(180deg,#f3ecfb,#fdeef3);}
+
+/* ================= 4. KỶ NIỆM ẢNH ================= */
+#memories{background:linear-gradient(180deg,#fdeef3,#f3ecfb);}
+.polaroid-grid{display:grid; gap:20px; max-width:900px; margin:0 auto; grid-template-columns:repeat(auto-fill,minmax(180px,1fr));}
+.polaroid{background:#fff; padding:10px 10px 45px; border-radius:8px; box-shadow:0 8px 25px rgba(91,70,83,.15); transform:rotate(var(--rot,-2deg)); transition:transform .4s, box-shadow .4s; cursor:pointer; position:relative;}
+.polaroid:nth-child(2n){--rot:2.5deg;}
+.polaroid:nth-child(3n){--rot:-1deg;}
+.polaroid:hover{transform:rotate(0) scale(1.04); box-shadow:0 15px 35px rgba(91,70,83,.25); z-index:2;}
+.polaroid .ph{aspect-ratio:1; border-radius:4px; overflow:hidden; background:linear-gradient(150deg,#f8c8d8,#d9cdf0); display:grid; place-items:center; font-size:2.2rem; color:#fff;}
+.polaroid .ph img{width:100%; height:100%; object-fit:cover;}
+.polaroid .cap{position:absolute; bottom:10px; left:0; right:0; text-align:center; font-family:'Playfair Display',serif; font-style:italic; font-size:.8rem; color:var(--ink-soft); padding:0 10px;}
+.quote-line{text-align:center; max-width:600px; margin:30px auto 0; font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(0.9rem,2.5vw,1.1rem); color:var(--rose);}
+
+#lightbox{position:fixed; inset:0; z-index:120; display:none; align-items:center; justify-content:center; background:rgba(50,32,45,.85); backdrop-filter:blur(8px); padding:24px;}
+#lightbox.show{display:flex; animation:fadeIn .3s;}
+#lightbox img{max-width:92vw; max-height:82vh; border-radius:12px; box-shadow:0 30px 80px rgba(0,0,0,.5);}
+#lightbox .lb-close{position:absolute; top:22px; right:26px; font-size:2rem; color:#fff; width:48px; height:48px; border-radius:50%; background:rgba(255,255,255,.15); display:grid; place-items:center; transition:background .25s;}
+#lightbox .lb-close:hover{background:rgba(255,255,255,.3);}
+
+/* ================= 5. HỘP QUÀ BÍ MẬT ================= */
+#secret{background:linear-gradient(180deg,#f3ecfb,#fff8f3);}
+.secret-wrap{max-width:600px; margin:0 auto; text-align:center;}
+.secret-box{width:140px; height:120px; margin:0 auto 30px; position:relative; cursor:pointer; animation:giftShake 2.4s ease-in-out infinite;}
+.secret-box .lid{position:absolute; top:-14px; left:-8px; width:156px; height:36px; background:linear-gradient(135deg,#e88aa8,#d96a8a); border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,.15); transition:transform .7s cubic-bezier(.2,1.4,.4,1), opacity .7s;}
+.secret-box .lid::after{content:""; position:absolute; left:50%; top:0; transform:translateX(-50%); width:24px; height:100%; background:var(--gold); border-radius:4px;}
+.secret-box .body{position:absolute; bottom:0; left:0; width:140px; height:90px; background:linear-gradient(160deg,#f4a9c0,#e17d9e); border-radius:10px; box-shadow:0 14px 30px rgba(0,0,0,.18);}
+.secret-box .body::after{content:""; position:absolute; left:50%; top:0; transform:translateX(-50%); width:24px; height:100%; background:var(--gold); border-radius:4px;}
+.secret-box.open{animation:none;}
+.secret-box.open .lid{transform:translateY(-100px) rotate(-16deg); opacity:0;}
+.secret-msg{min-height:80px; background:#fff; border-radius:var(--radius); padding:20px; box-shadow:var(--shadow); font-size:0.95rem; color:var(--ink); display:flex; align-items:center; justify-content:center; text-align:center; border:1px solid rgba(217,106,138,.15);}
+.secret-msg.pop{animation:pop .5s;}
+@keyframes pop{0%{transform:scale(.95);opacity:.4;}100%{transform:scale(1);opacity:1;}}
+.btn-more{margin-top:20px; padding:10px 25px; border-radius:999px; background:#fff; color:var(--rose); font-weight:700; box-shadow:0 8px 22px rgba(217,106,138,.22); border:1px solid rgba(217,106,138,.3); transition:transform .25s, background .25s; font-size: 0.9rem;}
+.btn-more:hover{transform:translateY(-3px); background:var(--pink);}
+
+/* ================= FOOTER ================= */
+footer{padding:60px 20px 40px; text-align:center; background:linear-gradient(160deg,#e88aa8,#b79ce0 60%,#9b86c9); color:#fff; position:relative; overflow:hidden; z-index: 1;}
+footer::before,footer::after{content:""; position:absolute; border-radius:50%; background:rgba(255,255,255,.08);}
+footer::before{width:340px; height:340px; top:-140px; left:-100px;}
+footer::after{width:280px; height:280px; bottom:-120px; right:-80px;}
+footer h2{font-size:clamp(1.3rem,4.5vw,2rem); position:relative; z-index:1;}
+footer p{max-width:600px; margin:15px auto 0; color:rgba(255,255,255,.9); position:relative; z-index:1; font-size: 0.9rem;}
+footer .made{margin-top:25px; font-size:.8rem; letter-spacing:.08em; opacity:.85; position:relative; z-index:1;}
+.btn-top{margin-top:25px; padding:10px 28px; border-radius:999px; font-weight:700; background:rgba(255,255,255,.95); color:var(--rose); box-shadow:0 10px 26px rgba(0,0,0,.15); position:relative; z-index:1; transition:transform .25s; font-size: 0.9rem;}
+.btn-top:hover{transform:translateY(-3px) scale(1.03);}
+
+@media(max-width:480px){
+  section{padding:60px 15px;} 
+  .big-card .lead{font-size:1.1rem;} 
+  .big-card p, .letter-36-wrap p, .teacher-card p{font-size:.9rem;}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important; transition:none!important;} .reveal{opacity:1; transform:none;}}
+</style>
+</head>
+<body>
+
+<canvas id="petals-canvas"></canvas>
+
+<!-- NHẠC NỀN: Trỏ đường dẫn lùi ra ngoài 1 cấp (../) để tìm file ở thư mục gốc -->
+<audio id="bg-music" loop>
+  <source src="../nhac-nen.mp3" type="audio/mpeg">
+  <source src="nhac-nen.mp3" type="audio/mpeg">
+  <!-- Link nhạc dự phòng nếu host chặn không cho đọc file mp3 -->
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<header class="topbar" id="topbar">
+  <div class="brand">12A11 💗</div>
+  <div class="controls">
+    <button class="ctrl-btn" id="btn-music" title="Bật/tắt nhạc nền">🔇</button>
+    <input type="range" id="vol-slider" class="volume-slider" min="0" max="1" step="0.1" value="0.4" title="Âm lượng">
+    <button class="ctrl-btn" id="btn-fx" title="Bật/tắt hiệu ứng hoa rơi">🌸</button>
+  </div>
+</header>
+
+<!-- MÀN HÌNH CHÀO -->
+<section id="welcome">
+  <canvas id="intro-canvas"></canvas>
+  
+  <div class="welcome-content" id="welcome-content">
+    <span class="welcome-badge">
+      <span class="float-emoji">🌷</span> Happy Vietnamese Women's Day 20/10 <span class="float-emoji">🌷</span>
+    </span>
+    <h1 class="welcome-title text-wave">Chúc Mừng Ngày<br>Phụ Nữ Việt Nam 20/10</h1>
+    <p class="welcome-sub">Gửi những lời yêu thương nhất 💗</p>
+    <button class="btn-gift bounce-text" id="btn-open-gift">💌 Mở bức thư yêu thương</button>
+  </div>
+</section>
+
+<!-- HỘP QUÀ OVERLAY (MỞ THƯ) -->
+<div id="gift-overlay">
+  <div class="gift-letter" id="gift-letter">
+    <button class="gift-letter-close" id="btn-close-gift">✕</button>
+    <div class="gift-letter-inner">
+      <div class="gift-letter-icon float-emoji">💌</div>
+      <h3 class="glow-text">Gửi những cô gái tuyệt vời của lớp 12A11!</h3>
+      <p>Nhân ngày 20/10, chúc các bạn nữ luôn xinh tươi, vui vẻ và hạnh phúc.</p>
+      <p>Mong mỗi ngày đến trường là một ngày vui, mỗi ước mơ đều có cơ hội tỏa sáng và mỗi chặng đường phía trước đều ngập tràn những điều tốt đẹp.</p>
+      <p style="font-weight:700; color:var(--rose); text-align:center;">Mãi xinh đẹp và hạnh phúc nhé! 💖</p>
+      <p class="gift-letter-sign">— Từ những thành viên luôn yêu quý các bạn —</p>
+      <button class="btn-close-gift" id="btn-explore">Khám phá thêm →</button>
+    </div>
+  </div>
+</div>
+
+<!-- 1. THƯ CHUNG -->
+<section id="letter">
+  <div class="section-head reveal"><h2>Gửi những cô gái tuyệt vời của lớp chúng ta!</h2><span class="ornament"></span></div>
+  <div class="big-card reveal">
+    <p class="lead">Nhân ngày 20/10, chúc các bạn nữ luôn xinh tươi, vui vẻ và hạnh phúc.</p>
+    <p>Mong mỗi ngày đến trường là một ngày vui, mỗi ước mơ đều có cơ hội tỏa sáng và mỗi chặng đường phía trước đều ngập tràn những điều tốt đẹp.</p>
+    <p>Hãy luôn giữ nụ cười rạng rỡ và cá tính riêng, tự tin tỏa sáng theo cách của riêng mình, bởi mỗi người là một bông hoa đặc biệt của lớp.</p>
+    <p>Cảm ơn các bạn vì những kỷ niệm và tiếng cười tuyệt đẹp. Chúc các bạn ngày 20/10 ý nghĩa, nhận được nhiều yêu thương và gặp nhiều may mắn!</p>
+    <p style="color:var(--rose); font-weight:700; text-align: center;">Mãi xinh đẹp và hạnh phúc nhé! 💖</p>
+    <p class="sign">— Từ những thành viên luôn yêu quý các bạn —</p>
+  </div>
+  
+  <div class="next-btn-wrap reveal">
+    <button class="btn-next" onclick="document.getElementById('teacher').scrollIntoView({behavior: 'smooth'})">
+      Tiếp tục gửi lời chúc đến cô giáo ↓
+    </button>
+  </div>
+</section>
+
+<!-- 2. TRI ÂN CÔ GIÁO -->
+<section id="teacher">
+  <div class="section-head reveal"><h2>🌹 Gửi lời tri ân đến cô giáo</h2><span class="ornament"></span></div>
+  <div class="teacher-wrap">
+    <div class="teacher-visual reveal" id="teacher-avatar">
+      <img src="https://i.ibb.co/pvnz4CVH/IMG-7088.jpg" alt="Cô giáo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <div class="fallback-emoji" style="display:none;">👩‍🏫</div>
+    </div>
+    <div class="teacher-card reveal">
+      <h3>Cô giáo chủ nhiệm kính yêu</h3>
+      <p>Nhân ngày 20/10, chúng em kính chúc cô luôn mạnh khỏe, hạnh phúc, xinh đẹp và tràn đầy nhiệt huyết.</p>
+      <p>Cảm ơn cô vì đã luôn tận tâm dạy dỗ, yêu thương và đồng hành cùng chúng em. Chúc cô có một ngày 20/10 thật nhiều niềm vui và luôn nở nụ cười hạnh phúc!</p>
+      <button class="btn-soft" id="btn-teacher">Gửi lời chúc đến cô</button>
+      <div class="teacher-msg" id="teacher-msg">🌷 Cô ơi, chúng em yêu cô rất nhiều! Chúc cô luôn mạnh khỏe và hạnh phúc, mãi là người truyền cảm hứng cho chúng em ạ! 💐</div>
+    </div>
+  </div>
+  
+  <div class="next-btn-wrap reveal">
+    <button class="btn-next" onclick="document.getElementById('wishes').scrollIntoView({behavior: 'smooth'})">
+      Tiếp tục gửi lời chúc đến các cô gái 12A11 ↓
+    </button>
+  </div>
+</section>
+
+<!-- 3. GỬI CÁC CÔ GÁI 12A11 -->
+<section id="wishes">
+  <div class="section-head reveal"><h2>💐 Gửi những cô gái của tập thể 12A11</h2><span class="ornament"></span></div>
+  <div class="letter-36-wrap reveal">
+    <h3>Thanh xuân rực rỡ của chúng ta</h3>
+    <p>Gửi những cô gái xinh đẹp và đáng yêu nhất của đại gia đình 12A11! Nhân ngày 20/10, lớp mình muốn gửi đến các cậu những lời chúc ngọt ngào nhất.</p>
+    <p>Mỗi cậu là một mảnh ghép không thể thiếu, tạo nên một 12A11 vô cùng rực rỡ. Cảm ơn các cậu vì đã luôn dịu dàng, mạnh mẽ và mang đến thật nhiều tiếng cười cho tập thể.</p>
+    <p>Chúc các cậu luôn giữ được nụ cười tỏa nắng, sự tự tin và bản lĩnh. Dù là trong những ngày tháng cấp 3 này hay tương lai phía trước, mong các cậu luôn gặp được những điều tử tế, được yêu thương và chạm tay vào ước mơ của mình!</p>
+    <p style="text-align:center; color:var(--rose); font-weight:700; margin-top: 20px;">💖 Mãi yêu các cô gái của chúng ta! 💖</p>
+  </div>
+  
+  <div class="next-btn-wrap reveal">
+    <button class="btn-next" onclick="document.getElementById('memories').scrollIntoView({behavior: 'smooth'})">
+      Cùng xem lại thanh xuân của chúng ta ↓
+    </button>
+  </div>
+</section>
+
+<!-- 4. KỶ NIỆM ẢNH -->
+<section id="memories">
+  <div class="section-head reveal"><h2>📸 Thanh xuân của chúng ta</h2><span class="ornament"></span></div>
+  <div class="polaroid-grid" id="polaroid-grid"></div>
+  <p class="quote-line reveal">"Rồi một ngày, chúng ta sẽ nhớ những tháng ngày bình thường này bằng tất cả sự trân trọng."</p>
+  
+  <div class="next-btn-wrap reveal">
+    <button class="btn-next" onclick="document.getElementById('secret').scrollIntoView({behavior: 'smooth'})">
+      Nhận món quà bí mật cuối cùng ↓
+    </button>
+  </div>
+</section>
+
+<div id="lightbox">
+  <button class="lb-close" id="lb-close">✕</button>
+  <img src="" alt="Ảnh kỷ niệm">
+</div>
+
+<!-- 5. HỘP QUÀ BÍ MẬT -->
+<section id="secret">
+  <div class="section-head reveal"><h2>🎁 Bạn có một món quà bí mật!</h2><span class="ornament"></span></div>
+  <div class="secret-wrap reveal">
+    <div class="secret-box" id="secret-box"><div class="lid"></div><div class="body"></div></div>
+    <div class="secret-msg" id="secret-msg">Nhấn vào hộp quà để mở ra một lời chúc ngẫu nhiên nhé! 💝</div>
+    <button class="btn-more" id="btn-more">Nhận thêm một lời chúc</button>
+  </div>
+</section>
+
+<footer class="reveal">
+  <h2><span>💖 20/10 – Một ngày đặc biệt</span><br><span>dành cho những người đặc biệt 💖</span></h2>
+  <p>Cảm ơn vì đã là một phần tuyệt vời của tập thể lớp 12A11. Chúc tất cả các bạn nữ luôn được yêu thương, trân trọng và hạnh phúc!</p>
+  <div class="made">Made with ❤️ by our class</div>
+  <button class="btn-top" id="btn-top">↑ Quay lại đầu trang</button>
+</footer>
+
+<script>
+/* ============ DỮ LIỆU ============ */
+const PHOTOS = [
+  { src: "https://i.ibb.co/mrwnd6xF/1K5BVUQV6-6KN60R.jpg", caption: "Tập thể lớp mình 💕" }, 
+  { src: "https://i.ibb.co/9kr6TV1F/1K5BVUQV6-6KN60R.jpg", caption: "Những ngày đến trường" },
+  { src: "https://i.ibb.co/NqDBrJc/1K5BVUQV6-6KN60R.jpg", caption: "Khoảnh khắc đáng nhớ" }, 
+  { src: "https://i.ibb.co/7d8FMqGn/1K5BVUQV6-6KN60R.jpg", caption: "Thanh xuân rực rỡ" },
+  { src: "https://i.ibb.co/Hfp7B9df/1K5BVUQV6-6KN60R.jpg", caption: "Tiếng cười của lớp" }, 
+  { src: "https://i.ibb.co/1Y9DS0Gs/1K5BVUQV6-6KN60R.jpg", caption: "Mãi là kỷ niệm đẹp" },
+  { src: "https://i.ibb.co/WpkmWSqw/1K5BVUQV6-6KN60R.jpg", caption: "Kỷ niệm đáng nhớ" }, 
+  { src: "https://i.ibb.co/1YWVhZhv/1K5BVUQV6-6KN60R.jpg", caption: "Thanh xuân rực rỡ" }
+];
+
+const SECRET_WISHES = [
+  "Bạn xứng đáng với tất cả những điều tốt đẹp nhất. Hãy luôn vui vẻ, tự tin và sống thật hạnh phúc nhé! 💖",
+  "Mong mọi điều dịu dàng nhất sẽ tìm đến bạn, hôm nay và cả những ngày sau. 🌷",
+  "Bạn là một bông hoa đặc biệt của lớp mình. Đừng quên tỏa sáng theo cách riêng nhé! 🌸",
+  "Chúc bạn luôn có thật nhiều lý do để mỉm cười, và thật nhiều người yêu thương bạn. 💗",
+  "Hãy cứ là chính bạn, vì bạn đã tuyệt vời theo cách riêng rồi. ✨",
+  "Một ngày 20/10 thật ngọt ngào, thật nhiều hoa và thật nhiều yêu thương dành cho bạn! 🌹"
+];
+
+/* ============ HIỆU ỨNG VÒNG TRÒN HOA ============ */
+const introCanvas = document.getElementById('intro-canvas');
+const ictx = introCanvas.getContext('2d');
+let IW, IH;
+let introFlowers = [];
+let introState = 'gather';
+const FLOWER_COUNT = 60;
+
+function resizeIntro() {
+  const wrap = document.getElementById('welcome');
+  if(!wrap) return;
+  IW = introCanvas.width = wrap.offsetWidth;
+  IH = introCanvas.height = wrap.offsetHeight;
+  if(introState === 'gather') initIntroFlowers();
+}
+setTimeout(resizeIntro, 100);
+window.addEventListener('resize', resizeIntro);
+
+const FLOWER_COLORS = ['#e88aa8', '#d96a8a', '#9b86c9', '#f5e2a8', '#f8c8d8'];
+
+function initIntroFlowers() {
+  introFlowers = [];
+  const cx = IW / 2, cy = IH / 2;
+  const R = Math.min(IW, IH) * (IW < 600 ? 0.3 : 0.35); 
+
+  for (let i = 0; i < FLOWER_COUNT; i++) {
+    const angle = (i / FLOWER_COUNT) * Math.PI * 2;
+    introFlowers.push({
+      startX: cx + Math.cos(angle) * R,
+      startY: cy + Math.sin(angle) * R,
+      angle: angle,
+      color: FLOWER_COLORS[i % FLOWER_COLORS.length],
+      size: 12 + Math.random() * 10,
+      offsetX: (Math.random() - 0.5) * 30,
+      offsetY: (Math.random() - 0.5) * 30,
+      speed: 0.5 + Math.random() * 0.5
+    });
+  }
+}
+
+function drawFlower(ctx, x, y, size, color, angle) {
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.rotate(angle);
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  for (let i = 0; i < 5; i++) {
+    ctx.ellipse(0, -size/2, size/3, size/2, (i * Math.PI * 2) / 5, 0, Math.PI * 2);
+  }
+  ctx.fill();
+  ctx.fillStyle = '#fff';
+  ctx.beginPath();
+  ctx.arc(0, 0, size/4, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+}
+
+function getHeartPoint(t) {
+  const x = 16 * Math.pow(Math.sin(t), 3);
+  const y = -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
+  return { x, y };
+}
+
+function animateIntro() {
+  if(!ictx) return;
+  ictx.clearRect(0, 0, IW, IH);
+  const cx = IW / 2, cy = IH / 2;
+  const scale = Math.min(IW, IH) * (IW < 600 ? 0.015 : 0.018);
+
+  let allDone = true;
+
+  introFlowers.forEach((f, i) => {
+    let targetX, targetY;
+
+    if (introState === 'gather') {
+      targetX = f.startX;
+      targetY = f.startY;
+    } else if (introState === 'heart') {
+      const t = (i / FLOWER_COUNT) * Math.PI * 2;
+      const hp = getHeartPoint(t);
+      targetX = cx + hp.x * scale;
+      targetY = cy + hp.y * scale;
+    } else if (introState === 'scatter') {
+      allDone = false;
+      f.scatterX = f.scatterX || f.startX + (Math.random() - 0.5) * IW * 1.5;
+      f.scatterY = f.scatterY || f.startY + (Math.random() - 0.5) * IH * 1.5;
+      targetX = f.scatterX;
+      targetY = f.scatterY;
+    }
+
+    f.currentX = f.currentX || f.startX;
+    f.currentY = f.currentY || f.startY;
+    
+    if (introState === 'gather') {
+      f.currentX += (targetX - f.currentX) * 0.05;
+      f.currentY += (targetY - f.currentY) * 0.05;
+      f.angle += 0.02;
+    } else if (introState === 'heart') {
+      f.currentX += (targetX - f.currentX) * 0.08;
+      f.currentY += (targetY - f.currentY) * 0.08;
+      f.angle += 0.05;
+    } else if (introState === 'scatter') {
+      f.currentX += (targetX - f.currentX) * 0.03;
+      f.currentY += (targetY - f.currentY) * 0.03;
+      f.angle += 0.1;
+      f.size *= 0.99;
+    }
+    drawFlower(ictx, f.currentX, f.currentY, f.size, f.color, f.angle);
+  });
+
+  if (introState === 'scatter' && allDone) {
+    document.getElementById('welcome-content').classList.add('show');
+    ictx.clearRect(0, 0, IW, IH);
+    return;
+  }
+  requestAnimationFrame(animateIntro);
+}
+initIntroFlowers();
+animateIntro();
+
+/* ============ XỬ LÝ NÚT BẤM ============ */
+const btnOpenGift = document.getElementById('btn-open-gift');
+const welcomeContent = document.getElementById('welcome-content');
+
+btnOpenGift.addEventListener('click', () => {
+  welcomeContent.classList.remove('show');
+  setTimeout(() => welcomeContent.classList.add('hide'), 100);
+  
+  setTimeout(() => {
+    introState = 'heart';
+    setTimeout(() => {
+      introState = 'scatter';
+      setTimeout(() => {
+        document.getElementById('gift-overlay').classList.add('show');
+        setTimeout(() => { 
+            document.getElementById('gift-overlay').classList.add('opened'); 
+            launchConfetti(80); 
+        }, 300);
+        startMusicOnFirstInteract();
+      }, 1500);
+    }, 2500);
+  }, 500);
+});
+
+document.getElementById('btn-close-gift').addEventListener('click', () => {
+  document.getElementById('gift-overlay').classList.remove('opened');
+  setTimeout(() => document.getElementById('gift-overlay').classList.remove('show'), 400);
+});
+document.getElementById('btn-explore').addEventListener('click', () => {
+  document.getElementById('gift-overlay').classList.remove('opened');
+  setTimeout(() => {
+    document.getElementById('gift-overlay').classList.remove('show');
+    document.getElementById('letter').scrollIntoView({ behavior: 'smooth' });
+  }, 400);
+});
+
+/* ============ NHẠC NỀN ============ */
+const bgMusic = document.getElementById('bg-music');
+const btnMusic = document.getElementById('btn-music');
+const volSlider = document.getElementById('vol-slider');
+let musicOn = false;
+bgMusic.volume = 0.4; 
+
+btnMusic.addEventListener('click', () => {
+  if (musicOn) {
+    bgMusic.pause(); btnMusic.textContent = '🔇'; btnMusic.classList.add('off');
+  } else {
+    bgMusic.play(); btnMusic.textContent = '🎵'; btnMusic.classList.remove('off');
+  }
+  musicOn = !musicOn;
+});
+
+volSlider.addEventListener('input', (e) => { bgMusic.volume = e.target.value; });
+
+function startMusicOnFirstInteract(){
+  if (!musicOn) {
+    bgMusic.play().then(() => {
+      musicOn = true; btnMusic.textContent = '🎵'; btnMusic.classList.remove('off');
+    }).catch(err => console.log("Chặn tự phát nhạc:", err));
+  }
+}
+
+/* ============ CÁC HÀM KHÁC ============ */
+const polaroidGrid = document.getElementById('polaroid-grid');
+PHOTOS.forEach((p, i) => {
+  const el = document.createElement('div'); el.className = 'polaroid reveal'; el.style.transitionDelay = (i * 0.06) + 's';
+  const inner = p.src ? `<img src="${p.src}" alt="${p.caption}">` : `<span>🌷</span>`;
+  el.innerHTML = `<div class="ph">${inner}</div><div class="cap">${p.caption}</div>`;
+  el.addEventListener('click', () => {
+    if (!p.src) return;
+    const lb = document.getElementById('lightbox'); lb.querySelector('img').src = p.src; lb.classList.add('show');
+  });
+  polaroidGrid.appendChild(el);
+});
+const lightbox = document.getElementById('lightbox');
+document.getElementById('lb-close').addEventListener('click', () => lightbox.classList.remove('show'));
+lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('show'); });
+
+document.getElementById('btn-teacher').addEventListener('click', () => { document.getElementById('teacher-msg').classList.toggle('show'); launchConfetti(30); });
+const secretBox = document.getElementById('secret-box'); const secretMsg = document.getElementById('secret-msg'); let secretOpened = false;
+function showSecretWish(){ const text = SECRET_WISHES[Math.floor(Math.random() * SECRET_WISHES.length)]; secretMsg.textContent = text; secretMsg.classList.remove('pop'); void secretMsg.offsetWidth; secretMsg.classList.add('pop'); launchConfetti(25); }
+secretBox.addEventListener('click', () => { if (!secretOpened){ secretBox.classList.add('open'); secretOpened = true; } showSecretWish(); });
+document.getElementById('btn-more').addEventListener('click', () => { if (!secretOpened){ secretBox.classList.add('open'); secretOpened = true; } showSecretWish(); });
+
+const io = new IntersectionObserver((entries) => { entries.forEach(en => { if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); }, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+const footerEl = document.querySelector('footer');
+const footerIO = new IntersectionObserver((entries) => { entries.forEach(en => { if (en.isIntersecting){ footerEl.querySelectorAll('.line-reveal').forEach(l => l.classList.add('in')); footerIO.unobserve(footerEl); } }); }, { threshold: 0.2 });
+footerIO.observe(footerEl);
+const topbar = document.getElementById('topbar');
+window.addEventListener('scroll', () => { topbar.classList.toggle('visible', window.scrollY > 120); }, { passive: true });
+document.getElementById('btn-top').addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+const canvas = document.getElementById('petals-canvas'); const ctx = canvas.getContext('2d');
+let W, H; function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+resize(); window.addEventListener('resize', resize);
+let fxOn = true; const btnFx = document.getElementById('btn-fx');
+btnFx.addEventListener('click', () => { fxOn = !fxOn; btnFx.classList.toggle('off', !fxOn); btnFx.textContent = fxOn ? '🌸' : '🚫'; if (!fxOn) petals = []; });
+const COLORS = ['#f8c8d8','#e88aa8','#d9cdf0','#f5e2a8','#ffffff']; let petals = []; let confetti = [];
+function rand(a, b){ return a + Math.random() * (b - a); }
+function createPetal(){ return { x: rand(0, W), y: rand(-H, -20), size: rand(6, 14), speedY: rand(0.4, 1.4), speedX: rand(-0.5, 0.5), rot: rand(0, Math.PI * 2), rotSpeed: rand(-0.02, 0.02), color: COLORS[Math.floor(Math.random() * COLORS.length)], sway: rand(0.5, 1.5), phase: rand(0, Math.PI * 2), type: Math.random() > 0.7 ? 'heart' : 'petal' }; }
+function createConfettiBurst(count){ for (let i = 0; i < count; i++){ confetti.push({ x: W / 2 + rand(-80, 80), y: H / 2 + rand(-40, 40), vx: rand(-6, 6), vy: rand(-12, -3), size: rand(6, 12), color: COLORS[Math.floor(Math.random() * COLORS.length)], life: 1, decay: rand(0.008, 0.018), rot: rand(0, Math.PI * 2), rotSpeed: rand(-0.1, 0.1), type: Math.random() > 0.5 ? 'heart' : 'petal' }); } }
+function launchConfetti(n){ createConfettiBurst(n); }
+function drawPetalShape(p){
+  ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.fillStyle = p.color; ctx.globalAlpha = 0.85;
+  if (p.type === 'heart'){ const s = p.size / 14; ctx.beginPath(); ctx.moveTo(0, 4 * s); ctx.bezierCurveTo(-6 * s, -4 * s, -12 * s, 4 * s, 0, 12 * s); ctx.bezierCurveTo(12 * s, 4 * s, 6 * s, -4 * s, 0, 4 * s); ctx.fill(); }
+  else { ctx.beginPath(); ctx.ellipse(0, 0, p.size, p.size * 0.55, 0, 0, Math.PI * 2); ctx.fill(); }
+  ctx.restore();
+}
+function animate(){
+  ctx.clearRect(0, 0, W, H);
+  if (fxOn && petals.length < 42 && Math.random() < 0.35) petals.push(createPetal());
+  petals.forEach((p, i) => { p.y += p.speedY; p.x += p.speedX + Math.sin(p.phase + p.y * 0.01) * p.sway * 0.3; p.rot += p.rotSpeed; if (p.y > H + 30 || p.x < -40 || p.x > W + 40) petals.splice(i, 1); else drawPetalShape(p); });
+  confetti.forEach((c, i) => { c.x += c.vx; c.y += c.vy; c.vy += 0.18; c.vx *= 0.99; c.life -= c.decay; c.rot += c.rotSpeed; if (c.life <= 0 || c.y > H + 40){ confetti.splice(i, 1); return; } ctx.globalAlpha = Math.max(c.life, 0); drawPetalShape({ ...c, type: c.type }); ctx.globalAlpha = 1; });
+  requestAnimationFrame(animate);
+}
+animate();
+
+window.addEventListener('load', () => {
+  btnMusic.classList.add('off');
+});
+</script>
+</body>
+</html>
